@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -41,7 +42,7 @@ class CouponManagerServiceTest {
                 "ABC123",
                 "Discount coupon",
                 new BigDecimal("10.00"),
-                LocalDateTime.now().plusDays(10),
+                LocalDate.now().plusDays(10),
                 true
         );
 
@@ -82,7 +83,7 @@ class CouponManagerServiceTest {
                 "ABC123",
                 "Discount coupon",
                 new BigDecimal("0.5"),
-                LocalDateTime.now().plusDays(10),
+                LocalDate.now().plusDays(10),
                 false
         );
 
@@ -120,7 +121,7 @@ class CouponManagerServiceTest {
                 "AB@C#12",
                 "Discount coupon",
                 new BigDecimal("10.00"),
-                LocalDateTime.now().plusDays(10),
+                LocalDate.now().plusDays(10),
                 false
         );
 

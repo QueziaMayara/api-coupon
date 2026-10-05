@@ -1,12 +1,12 @@
 package com.couponmanager.controller.response;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public record CouponResponse(Long id,
                              String code,
                              String description,
                              BigDecimal discountValue,
-                             LocalDateTime expirationDate,
+                             LocalDate expirationDate,
                              boolean published) {
 }

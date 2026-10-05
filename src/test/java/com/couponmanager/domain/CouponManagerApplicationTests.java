@@ -4,13 +4,14 @@ import com.couponmanager.exception.CouponDomainException;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CouponTest {
 
-	private static final LocalDateTime FUTURE_DATE = LocalDateTime.now().plusDays(1);
+	private static final LocalDate FUTURE_DATE = LocalDate.now().plusDays(1);
 
 	@Test
 	void shouldCreateCouponWithValidData() {
@@ -154,7 +155,7 @@ class CouponTest {
 						"ABC123",
 						"Discount coupon",
 						BigDecimal.TEN,
-						LocalDateTime.now().minusMinutes(1),
+						LocalDate.now().minusDays(1),
 						true
 				)
 		);

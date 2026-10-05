@@ -4,6 +4,7 @@ import com.couponmanager.exception.CouponDomainException;
 import lombok.Getter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -15,14 +16,14 @@ public class Coupon {
     private final String code;
     private final String description;
     private final BigDecimal discountValue;
-    private final LocalDateTime expirationDate;
+    private final LocalDate expirationDate;
     private final boolean published;
 
     public Coupon(
             String code,
             String description,
             BigDecimal discountValue,
-            LocalDateTime expirationDate,
+            LocalDate expirationDate,
             boolean published
     ) {
         this.code = sanitizeCode(code);
@@ -53,7 +54,7 @@ public class Coupon {
         }
 
         if (expirationDate == null ||
-                !expirationDate.isAfter(LocalDateTime.now())) {
+                !expirationDate.isAfter(LocalDate.now())) {
             throw new CouponDomainException(
                     "Expiration date must be in the future"
             );

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,7 +28,7 @@ public class CouponEntity {
     private BigDecimal discountValue;
 
     @Column(nullable = false)
-    private LocalDateTime expirationDate;
+    private LocalDate expirationDate;
 
     @Column(nullable = false)
     private boolean published;
@@ -41,7 +42,7 @@ public class CouponEntity {
             String code,
             String description,
             BigDecimal discountValue,
-            LocalDateTime expirationDate,
+            LocalDate expirationDate,
             boolean published
     ) {
         this.code = code;
