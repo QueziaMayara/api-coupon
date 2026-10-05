@@ -37,6 +37,20 @@ public class CouponEntity {
 
     private LocalDateTime deletedAt;
 
+    public CouponEntity(
+            String code,
+            String description,
+            BigDecimal discountValue,
+            LocalDateTime expirationDate,
+            boolean published
+    ) {
+        this.code = code;
+        this.description = description;
+        this.discountValue = discountValue;
+        this.expirationDate = expirationDate;
+        this.published = published;
+    }
+
     public void markAsDeleted(LocalDateTime deletedAt) {
         this.deleted = true;
         this.deletedAt = deletedAt;

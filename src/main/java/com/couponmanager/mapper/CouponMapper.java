@@ -8,7 +8,19 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface CouponMapper {
 
-    CouponEntity toEntity(Coupon coupon);
+    default CouponEntity toEntity(Coupon coupon) {
+        if (coupon == null) {
+            return null;
+        }
+
+        return new CouponEntity(
+                coupon.getCode(),
+                coupon.getDescription(),
+                coupon.getDiscountValue(),
+                coupon.getExpirationDate(),
+                coupon.isPublished()
+        );
+    }
 
     CouponResponse toResponse(CouponEntity coupon);
 }
